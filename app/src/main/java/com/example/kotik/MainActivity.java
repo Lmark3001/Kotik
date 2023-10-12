@@ -1,15 +1,18 @@
 package com.example.kotik;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.kotik.StartActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
+
 
     private MediaPlayer mediaPlayer;
     private TextView questionTextView;
@@ -17,32 +20,32 @@ public class MainActivity extends AppCompatActivity {
 
     // Здесь вы можете добавить свои вопросы и правильные ответы
     private String[] questions = {
-            "Какое из этих животных млекопитающее?",
-            "Сколько планет в Солнечной системе?",
+            "Пойдем спать??",
+            "Вам погладить спинку пепред сном?",
             // Добавьте еще вопросы...
     };
 
     private String[] options1 = {
-            "Лосось",
-            "8",
+            "дя",
+            "дя",
             // Добавьте еще варианты...
     };
 
     private String[] options2 = {
-            "Ящерица",
-            "9",
+            "неть",
+            "дя",
             // Добавьте еще варианты...
     };
 
     private String[] options3 = {
-            "Верблюд",
-            "10",
+            "ур",
+            "неть",
             // Добавьте еще варианты...
     };
 
     private String[] options4 = {
-            "Крокодил",
-            "7",
+            "мур",
+            "неть",
             // Добавьте еще варианты...
     };
 
@@ -52,11 +55,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
+        /////
+        //   Intent intent = new Intent(this, StartActivity.class);
+      //  startActivity(intent); //Убрал что бы не  гонять по кругу стартовый экран
+      //  finish();
+        //////
 
         // Инициализация MediaPlayer
         mediaPlayer = MediaPlayer.create(this, R.raw.r3);
-
         questionTextView = findViewById(R.id.questionTextView);
         option1Button = findViewById(R.id.option1Button);
         option2Button = findViewById(R.id.option2Button);
